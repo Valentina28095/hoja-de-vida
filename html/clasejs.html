@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>valentina</title>
+    <style>
+        #cambiar_fondo {
+            background-color: #0b52;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #000;
+            text-transform: uppercase;
+        }
+
+        #cambiar_fondo:hover {
+            background-color: purple;
+            transition: all ease-in-out .6s;
+            box-shadow: 0 0 10px gray;
+        }
+    </style>
+</head>
+
+<body id="contenedor">
+    <h1>valentina</h1>
+    <input type="text" id="variable">
+    <button onclick="funcion()" id="evento">CALCULAR</button>
+    <h1 id="titulo"></h1>
+    <span id="cambiar_fondo">CAMBIAR FONDO</span>
+
+
+
+
+
+
+
+
+
+    <!-- ARCHIVOS JS -->
+    <script>
+        // VARIABLES
+        const nameuno = "cualquier cosa, texto, número, objeto, array";
+        var name_dos = "cualquier cosa, texto, número, objeto, array";
+        let nameTres = "cualquier cosa, texto, número, objeto, array";
+        // alert(nameuno);
+        console.log(name_dos);
+        console.log(nameTres);
+
+        // TIPOS DE DATOS
+        let num_a = 5; //Número Entero
+        let num_b = 10.2; //Número Decimal
+        let boolean = false; //true or false
+        let stringvar = "Hola Soy un valentina";
+        let array = [1,2,3,4,5,6,7];
+        let dias_Semana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+        let user = [
+            {name: "valentina", last_name: "prado", Age:18},
+            {name: "pepa", last_name: "sarabia", Age:20},
+            {name: "pepe", last_name: "perez", Age:10}
+        ]
+
+        // OPERACIONES MATEMÁTICAS: + - * / % ^
+        let suma = num_a + num_b;
+        let resta = num_a - num_b;
+        let multi = num_a * num_b;
+        let divi = num_b / num_a;
+        let module = num_b % num_a;
+        let expo = num_a ^ num_b;
+        console.log("Suma: " +suma + "\nResta: " + resta + "\nMultiplicación: " + multi);
+        let concatenar = "Suma: " .concat(suma);
+        console.log(concatenar);
+
+        // OPERADORES DE COMPARACIÓN < > <> >= <= = == ===
+        // OPERADORES LÓGICOS: :? && || ! 
+         let varboo = true; 
+         console.log(!varboo);
+        //  ESTRUCTURAS REPETITIVAS: IF ELSE ELSEIF
+        // ESTRUCTURAS CÍCLICAS: FOR WHILE DO WHILE
+        let long = array.length;
+        if(long > 6) {
+            console.log(array);
+            console.log(array.length);
+            console.log(user[1].name)
+        }
+        else {
+            console.log("No Ingresa");
+        }
+        for(let i=0;i<dias_Semana.length;i++){
+            console.log(dias_Semana[i]);
+        }
+        let varname=0;
+        while(varname<user.length){
+            console.log(user[varname].name);
+            varname++
+        }
+
+        // FUNCIONES Y EVENTOS
+        function funcion(){
+            let variable = document.getElementById('variable').value;
+            variable = variable.toUpperCase();
+            document.getElementById('titulo').innerText = variable;
+            document.getElementById('titulo').style.color="#00ffff"
+            console.log(variable);
+        }
+
+        document.getElementById("evento").addEventListener("click", function(){
+            let variable = document.getElementById('variable').value;
+            document.getElementById('variable').style.background="red"
+            console.log(variable);
+        })
+
+        document.getElementById('cambiar_fondo').addEventListener("mouseover", function(){
+            document.getElementById('contenedor').style.background="red";
+        })
+    </script>
+</body>
+
+</html>
